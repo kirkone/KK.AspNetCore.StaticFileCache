@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Description>Fileprovider for app.UseStaticFiles with support for in memory caching.</Description>
+        <Authors>arbeit@kirkone.de</Authors>
+        <TargetFrameworks>netstandard1.6;net461;net451</TargetFrameworks>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <DebugType>portable</DebugType>
+        <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>KK.AspNetCore.StaticFileCache</AssemblyName>
+        <PackageId>KK.AspNetCore.StaticFileCache</PackageId>
+        <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="1.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="1.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta001">
+            <PrivateAssets>All</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+        <Reference Include="System" />
+        <Reference Include="Microsoft.CSharp" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+        <Reference Include="System" />
+        <Reference Include="Microsoft.CSharp" />
+    </ItemGroup>
+
+</Project>
